@@ -157,6 +157,7 @@ export default ({ channelName = defaultOpts.channelName } = defaultOpts) => {
           type: PATCH_STATE_TYPE,
           payload: diff,
           channelName, // Notifying what store is broadcasting the state changes
+          timestamp: Date.now(),
         });
       }
     };
@@ -169,6 +170,7 @@ export default ({ channelName = defaultOpts.channelName } = defaultOpts) => {
       type: STATE_TYPE,
       payload: currentState,
       channelName, // Notifying what store is broadcasting the state changes
+      timestamp: Date.now(),
     });
 
     /**
@@ -181,7 +183,8 @@ export default ({ channelName = defaultOpts.channelName } = defaultOpts) => {
       sendResponse({
         type: FETCH_STATE_TYPE,
         payload: state,
-      });
+        timestamp: Date.now(),
+      });xs
     });
 
     /**
