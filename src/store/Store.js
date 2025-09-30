@@ -61,7 +61,7 @@ class Store {
 
     // We request the latest available state data to initialise our store
     this.browserAPI.runtime.sendMessage(
-      { type: FETCH_STATE_TYPE, channelName }, undefined, this.initializeStore
+      { type: FETCH_STATE_TYPE, channelName, timestamp: Date.now() }, undefined, this.initializeStore
     );
 
     this.deserializer = deserializer;
@@ -186,7 +186,8 @@ class Store {
         {
           type: DISPATCH_TYPE,
           channelName: this.channelName,
-          payload: data
+          payload: data,
+          timestamp: Date.now()
         }, null, (resp) => {
           if (!resp) {
             const error = this.browserAPI.runtime.lastError;
