@@ -1,5 +1,5 @@
 {
-  "name": "webext-redux",
+  "name": "@testsigmainc/webext-redux",
   "version": "4.0.0",
   "description": "A set of utilities for building Redux applications in Web Extensions.",
   "main": "lib/index.js",
@@ -15,11 +15,14 @@
     "test-run": "mocha --require @babel/register --recursive",
     "test": "npm run lint && npm run test-run"
   },
+  "publishConfig": {
+    "@testsigmainc:registry": "https://npm.pkg.github.com"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tshaddix/webext-redux.git"
+    "url": "git+https://github.com/TestsigmaInc/webext-redux.git"
   },
-  "author": "Tyler Shaddix",
+  "author": "Testsigma",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tshaddix/webext-redux/issues"
