@@ -184,7 +184,7 @@ export default ({ channelName = defaultOpts.channelName } = defaultOpts) => {
         type: FETCH_STATE_TYPE,
         payload: state,
         timestamp: Date.now(),
-      });xs
+      });
     });
 
     /**
